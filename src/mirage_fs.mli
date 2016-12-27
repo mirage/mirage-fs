@@ -22,6 +22,8 @@
 
 (** {1 Mirage_fs} *)
 
+open Result
+
 (** The type for FS errors. *)
 type error = [
   | `Is_a_directory      (** Cannot read or write the contents of a directory *)
