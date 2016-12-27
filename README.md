@@ -1,10 +1,12 @@
 ## mirage-fs — MirageOS signatures for filesystem devices
 
-mirage-fs is TODO
+mirage-fs provides the [Mirage_fs.S][fs] and [Mirage_fs_lwt.S] signatures
+the MirageOS filesystem devices should implement.
 
 mirage-fs is distributed under the ISC license.
 
-Homepage: https://github.com/samoht/mirage-fs
+[fs]: http://mirage.github.io/mirage-fs/Mirage_fs.html
+[fslwt]: http://mirage.github.io/mirage-fs/Mirage_fs_lwt.html
 
 ## Installation
 
@@ -21,15 +23,4 @@ The documentation and API reference is generated from the source
 interfaces. It can be consulted [online][doc] or via `odig doc
 mirage-fs`.
 
-[doc]: https://samoht.github.io/mirage-fs/
-
-## Sample programs
-
-If you installed mirage-fs with `opam` sample programs are located in
-the directory `opam var mirage-fs:doc`.
-
-In the distribution sample programs and tests are located in the
-[`test`](test) directory of the distribution. They can be built and run
-with:
-
-    topkg build --tests true && topkg test
+[doc]: https://mirage.github.io/mirage-fs/
