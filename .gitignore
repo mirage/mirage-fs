@@ -1,3 +1,8 @@
-_build/
-_config/
+_build
+tmp
+*~
+\.\#*
+\#*#
+*.install
 *.native
+*.byte

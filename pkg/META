@@ -1,0 +1,7 @@
+description = "MirageOS signatures for filesystem devices"
+version = "%%VERSION_NUM%%"
+requires = "mirage-device fmt"
+archive(byte) = "mirage-fs.cma"
+archive(native) = "mirage-fs.cmxa"
+plugin(byte) = "mirage-fs.cma"
+plugin(native) = "mirage-fs.cmxs"
