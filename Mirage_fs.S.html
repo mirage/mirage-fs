@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Mirage_fs.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Mirage_fs" rel="Chapter" href="Mirage_fs.html">
+<link title="Mirage_fs_lwt" rel="Chapter" href="Mirage_fs_lwt.html"><title>Mirage_fs.S</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Mirage_fs.html" title="Mirage_fs">Up</a>
+&nbsp;</div>
+<h1>Module type <a href="type_Mirage_fs.S.html">Mirage_fs.S</a></h1>
+
+<pre><span class="keyword">module type</span> S = <code class="code"><span class="keyword">sig</span></code> <a href="Mirage_fs.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+<h1 id="1_Filesystem">Filesystem</h1><br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> = private <code class="type">[> `Is_a_directory | `No_directory_entry | `Not_a_directory ]</code> </pre>
+<div class="info ">
+The type for errors.<br>
+</div>
+
+
+<pre><span id="VALpp_error"><span class="keyword">val</span> pp_error</span> : <code class="type"><a href="Mirage_fs.S.html#TYPEerror">error</a> Fmt.t</code></pre><div class="info ">
+<code class="code">pp_error</code> is the pretty-printer for errors.<br>
+</div>
+
+<pre><span id="TYPEwrite_error"><span class="keyword">type</span> <code class="type"></code>write_error</span> = private <code class="type">[> `File_already_exists<br>        | `Is_a_directory<br>        | `No_directory_entry<br>        | `No_space<br>        | `Not_a_directory ]</code> </pre>
+<div class="info ">
+The type for FS write errors.<br>
+</div>
+
+
+<pre><span id="VALpp_write_error"><span class="keyword">val</span> pp_write_error</span> : <code class="type"><a href="Mirage_fs.S.html#TYPEwrite_error">write_error</a> Fmt.t</code></pre><div class="info ">
+<code class="code">pp_write_error</code> is the pretty-printer for write errors.<br>
+</div>
+
+<pre><span class="keyword">include</span> Mirage_device.S</pre>
+
+<pre><span id="TYPEpage_aligned_buffer"><span class="keyword">type</span> <code class="type"></code>page_aligned_buffer</span> </pre>
+<div class="info ">
+The type for memory buffers.<br>
+</div>
+
+
+<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">t -><br>       string -><br>       int -><br>       int -><br>       (<a href="Mirage_fs.S.html#TYPEpage_aligned_buffer">page_aligned_buffer</a> list, <a href="Mirage_fs.S.html#TYPEerror">error</a>) Result.result io</code></pre><div class="info ">
+<code class="code">read&nbsp;t&nbsp;key&nbsp;offset&nbsp;length</code> reads up to <code class="code">length</code> bytes from the
+      value associated with <code class="code">key</code>. If less data is returned than
+      requested, this indicates the end of the value.<br>
+</div>
+
+<pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type">t -> string -> (int64, <a href="Mirage_fs.S.html#TYPEerror">error</a>) Result.result io</code></pre><div class="info ">
+Get the value size.<br>
+</div>
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">t -> string -> (unit, <a href="Mirage_fs.S.html#TYPEwrite_error">write_error</a>) Result.result io</code></pre><div class="info ">
+<code class="code">create&nbsp;t&nbsp;path</code> creates an empty file at <code class="code">path</code>. If <code class="code">path</code>
+      contains directories that do not yet exist, <code class="code">create</code> will
+      attempt to create them.<br>
+</div>
+
+<pre><span id="VALmkdir"><span class="keyword">val</span> mkdir</span> : <code class="type">t -> string -> (unit, <a href="Mirage_fs.S.html#TYPEwrite_error">write_error</a>) Result.result io</code></pre><div class="info ">
+<code class="code">mkdir&nbsp;t&nbsp;path</code> creates an empty directory at <code class="code">path</code>.  If <code class="code">path</code>
+      contains intermediate directories that do not yet exist, <code class="code">mkdir</code>
+      will create them.  If a directory already exists at <code class="code">path</code>,
+      <code class="code">mkdir</code> returns <code class="code"><span class="keywordsign">`</span><span class="constructor">Ok</span>&nbsp;()</code> and takes no action.<br>
+</div>
+
+<pre><span id="VALdestroy"><span class="keyword">val</span> destroy</span> : <code class="type">t -> string -> (unit, <a href="Mirage_fs.S.html#TYPEwrite_error">write_error</a>) Result.result io</code></pre><div class="info ">
+<code class="code">destroy&nbsp;t&nbsp;path</code> removes a <code class="code">path</code> (which may be a file or an
+      empty directory) on filesystem <code class="code">t</code>.<br>
+</div>
+
+<pre><span id="VALstat"><span class="keyword">val</span> stat</span> : <code class="type">t -> string -> (<a href="Mirage_fs.html#TYPEstat">Mirage_fs.stat</a>, <a href="Mirage_fs.S.html#TYPEerror">error</a>) Result.result io</code></pre><div class="info ">
+<code class="code">stat&nbsp;t&nbsp;path</code> returns information about file or directory at
+      <code class="code">path</code>.<br>
+</div>
+
+<pre><span id="VALlistdir"><span class="keyword">val</span> listdir</span> : <code class="type">t -> string -> (string list, <a href="Mirage_fs.S.html#TYPEerror">error</a>) Result.result io</code></pre><div class="info ">
+<code class="code">listdir&nbsp;t&nbsp;path</code> returns the names of files and subdirectories
+      within the directory <code class="code">path</code>.<br>
+</div>
+
+<pre><span id="VALwrite"><span class="keyword">val</span> write</span> : <code class="type">t -><br>       string -><br>       int -><br>       <a href="Mirage_fs.S.html#TYPEpage_aligned_buffer">page_aligned_buffer</a> -><br>       (unit, <a href="Mirage_fs.S.html#TYPEwrite_error">write_error</a>) Result.result io</code></pre><div class="info ">
+<code class="code">write&nbsp;t&nbsp;path&nbsp;offset&nbsp;data</code> writes <code class="code">data</code> at <code class="code">offset</code> in file
+      <code class="code">path</code> on filesystem <code class="code">t</code>.
+<p>
+
+      If <code class="code">path</code> contains directories that do not exist, <code class="code">write</code> will
+      attempt to create them.  If <code class="code">path</code> already exists, <code class="code">write</code> will
+      overwrite existing information starting at <code class="code">off</code>.<br>
+</div>
+</body></html>

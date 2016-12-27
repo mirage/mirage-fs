@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="next" href="Mirage_fs_lwt.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Mirage_fs" rel="Chapter" href="Mirage_fs.html">
+<link title="Mirage_fs_lwt" rel="Chapter" href="Mirage_fs_lwt.html"><link title="Mirage_fs" rel="Section" href="#1_Miragefs">
+<title>Mirage_fs</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Mirage_fs_lwt.html" title="Mirage_fs_lwt">Next</a>
+</div>
+<h1>Module <a href="type_Mirage_fs.html">Mirage_fs</a></h1>
+
+<pre><span class="keyword">module</span> Mirage_fs: <code class="code"><span class="keyword">sig</span></code> <a href="Mirage_fs.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+MirageOS signatures for filesystem devices
+<p>
+
+    <em>mirage-fs-0.5.0-7-g563b0e1 </em><br>
+</div>
+<hr width="100%">
+<br>
+<h1 id="1_Miragefs">Mirage_fs</h1><br>
+
+<pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> = <code class="type">[ `Is_a_directory | `No_directory_entry | `Not_a_directory ]</code> </pre>
+<div class="info ">
+The type for FS errors.<br>
+</div>
+
+
+<pre><span id="VALpp_error"><span class="keyword">val</span> pp_error</span> : <code class="type"><a href="Mirage_fs.html#TYPEerror">error</a> Fmt.t</code></pre><div class="info ">
+<code class="code">pp_error</code> is the pretty-printer for errors.<br>
+</div>
+
+<pre><span id="TYPEwrite_error"><span class="keyword">type</span> <code class="type"></code>write_error</span> = <code class="type">[ `File_already_exists<br>       | `Is_a_directory<br>       | `No_directory_entry<br>       | `No_space<br>       | `Not_a_directory ]</code> </pre>
+<div class="info ">
+The type for FS write errors.<br>
+</div>
+
+
+<pre><span id="VALpp_write_error"><span class="keyword">val</span> pp_write_error</span> : <code class="type"><a href="Mirage_fs.html#TYPEwrite_error">write_error</a> Fmt.t</code></pre><div class="info ">
+<code class="code">pp_write_error</code> is the pretty-printer for write errors.<br>
+</div>
+
+<pre><code><span id="TYPEstat"><span class="keyword">type</span> <code class="type"></code>stat</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat.filename">filename</span>&nbsp;: <code class="type">string</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Filename within the enclosing directory<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat.read_only">read_only</span>&nbsp;: <code class="type">bool</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+True means the contents are read-only<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat.directory">directory</span>&nbsp;: <code class="type">bool</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+True means the entity is a directory; false means a file<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat.size">size</span>&nbsp;: <code class="type">int64</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Size of the entity in bytes<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info ">
+The type for Per-file/directory statistics.<br>
+</div>
+
+
+<pre><span class="keyword">module type</span> <a href="Mirage_fs.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Mirage_fs.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Filesystem
+</div>
+</body></html>
