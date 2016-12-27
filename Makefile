@@ -1,9 +1,7 @@
-OCAMLBUILD ?= ocamlbuild
-PREFIX ?= /usr/local
-
 all:
-	cd crunch && $(OCAMLBUILD) $(OCAMLBUILD_FLAGS) crunch.native
+	ocaml pkg/pkg.ml build -n mirage-fs -q
+	ocaml pkg/pkg.ml build -n mirage-fs-lwt -q
 
-install:
-	mkdir -p $(PREFIX)/bin
-	cp crunch/_build/crunch.native $(PREFIX)/bin/mir-crunch
+clean:
+	ocaml pkg/pkg.ml clean -n mirage-fs -q
+	ocaml pkg/pkg.ml clean -n mirage-fs-lwt -q
