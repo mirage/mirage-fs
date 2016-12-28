@@ -13,7 +13,7 @@ let opams =
     Pkg.opam_file ~lint_deps_excluding:(Some no_lint) ~install:false name
   in
   [
-  opam ["lwt"; "mirage-fs"; "cstruct"; "result"] "opam";
+  opam ["lwt"; "mirage-fs"; "cstruct"; "mirage-kv-lwt"; "result"] "opam";
   opam ["fmt"; "mirage-device"; "result"] "mirage-fs-lwt.opam";
   ]
 
