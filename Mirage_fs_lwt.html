@@ -24,10 +24,14 @@
 MirageOS signatures for filesystem devices using Lwt.
 <p>
 
-    <em>mirage-fs-0.5.0-7-g563b0e1 </em><br>
+    <em>mirage-fs-0.5.0-20-g9bb0177 </em><br>
 </div>
 <hr width="100%">
 
 <pre><span class="keyword">module type</span> <a href="Mirage_fs_lwt.S.html">S</a> = <code class="type"><a href="Mirage_fs.S.html">Mirage_fs.S</a></code><code class="type"> 
   with type 'a io = 'a Lwt.t
-   and type page_aligned_buffer = Cstruct.t</code></pre></body></html>
+   and type page_aligned_buffer = Cstruct.t</code></pre>
+<pre><span class="keyword">module</span> <a href="Mirage_fs_lwt.To_KV_RO.html">To_KV_RO</a>: <div class="sig_block"><code class="code"><span class="keyword">functor</span>&nbsp;(</code><code class="code"><span class="constructor">FS</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Mirage_fs_lwt.S.html">S</a></code><code class="code">)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;</code><code class="type">Mirage_kv_lwt.RO</code><code class="type">  with type t = FS.t</code></div></pre><div class="info">
+Consider a filesystem device as a key/value read-only store.
+</div>
+</body></html>

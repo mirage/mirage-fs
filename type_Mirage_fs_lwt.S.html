@@ -27,14 +27,17 @@
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;disconnect&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;io<br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;page_aligned_buffer&nbsp;=&nbsp;<span class="constructor">Cstruct</span>.t<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(page_aligned_buffer&nbsp;list,&nbsp;error)&nbsp;result&nbsp;io<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;size&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(int64,&nbsp;error)&nbsp;result&nbsp;io<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;create&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(unit,&nbsp;write_error)&nbsp;result&nbsp;io<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mkdir&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(unit,&nbsp;write_error)&nbsp;result&nbsp;io<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;destroy&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(unit,&nbsp;write_error)&nbsp;result&nbsp;io<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;stat&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Mirage_fs</span>.stat,&nbsp;error)&nbsp;result&nbsp;io<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;listdir&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(string&nbsp;list,&nbsp;error)&nbsp;result&nbsp;io<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(page_aligned_buffer&nbsp;list,&nbsp;error)&nbsp;<span class="constructor">Result</span>.result&nbsp;io<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;size&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(int64,&nbsp;error)&nbsp;<span class="constructor">Result</span>.result&nbsp;io<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;create&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(unit,&nbsp;write_error)&nbsp;<span class="constructor">Result</span>.result&nbsp;io<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mkdir&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(unit,&nbsp;write_error)&nbsp;<span class="constructor">Result</span>.result&nbsp;io<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;destroy&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(unit,&nbsp;write_error)&nbsp;<span class="constructor">Result</span>.result&nbsp;io<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;stat&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Mirage_fs</span>.stat,&nbsp;error)&nbsp;<span class="constructor">Result</span>.result&nbsp;io<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;listdir&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(string&nbsp;list,&nbsp;error)&nbsp;<span class="constructor">Result</span>.result&nbsp;io<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;page_aligned_buffer&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(unit,&nbsp;write_error)&nbsp;result&nbsp;io<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;page_aligned_buffer&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(unit,&nbsp;write_error)&nbsp;<span class="constructor">Result</span>.result&nbsp;io<br>
 <span class="keyword">end</span></code></body></html>
