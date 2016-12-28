@@ -25,6 +25,6 @@ let () =
          Pkg.mllib "src/mirage-fs.mllib" ]
   | "mirage-fs-lwt" ->
     Ok [ Pkg.lib "pkg/META.lwt" ~dst:"META";
-         Pkg.lib ~exts:Exts.interface "src/mirage_fs_lwt" ]
+         Pkg.mllib "lwt/mirage-fs-lwt.mllib" ]
   | other ->
     R.error_msgf "unknown package name: %s" other

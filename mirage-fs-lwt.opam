@@ -8,13 +8,14 @@ dev-repo:     "https://github.com/mirage/mirage-fs.git"
 bug-reports:  "https://github.com/mirage/mirage-fs/issues"
 tags:         ["org:mirage"]
 
-build: ["ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%" ]
+build: ["ocaml" "pkg/pkg.ml" "build" "-n" name "--pinned" "%{pinned}%" ]
 
 depends: [
   "ocamlfind" {build}
   "ocamlbuild" {build}
   "topkg" {build}
   "mirage-fs" {>= "1.0.0"}
+  "mirage-kv-lwt"
   "lwt"
   "cstruct"
 ]
