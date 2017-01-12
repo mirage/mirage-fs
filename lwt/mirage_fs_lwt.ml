@@ -56,4 +56,6 @@ module To_KV_RO (FS: S) = struct
     | Error e -> Error (`FS e)
     | Ok stat -> Ok (stat.Mirage_fs.size)
 
+  let connect t = Lwt.return t
+
 end
