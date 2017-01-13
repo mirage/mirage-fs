@@ -25,4 +25,7 @@ module type S = Mirage_fs.S
    and type page_aligned_buffer = Cstruct.t
 
 (** Consider a filesystem device as a key/value read-only store. *)
-module To_KV_RO (FS: S): Mirage_kv_lwt.RO with type t = FS.t
+module To_KV_RO (FS: S): sig
+  include Mirage_kv_lwt.RO with type t = FS.t
+  val connect : FS.t -> t io
+end
