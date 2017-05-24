@@ -1,7 +1,0 @@
-description = "MirageOS signatures for filesystem devices"
-version = "%%VERSION_NUM%%"
-requires = "mirage-fs lwt cstruct"
-archive(byte) = "mirage-fs-lwt.cma"
-archive(native) = "mirage-fs-lwt.cmxa"
-plugin(byte) = "mirage-fs-lwt.cma"
-plugin(native) = "mirage-fs-lwt.cmxs"

@@ -1,7 +1,0 @@
-true : bin_annot, safe_string, package(bytes), short_paths
-true: warn_error(+1..49+60), warn(A-4-41-44)
-
-<src> : include
-
-true: package(fmt mirage-device result)
-<lwt/*>: package(mirage-fs mirage-kv-lwt lwt cstruct)
