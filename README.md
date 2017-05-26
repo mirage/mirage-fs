@@ -1,6 +1,6 @@
 ## mirage-fs — MirageOS signatures for filesystem devices
 
-mirage-fs provides the [Mirage_fs.S][fs] and [Mirage_fs_lwt.S] signatures
+mirage-fs provides the `[Mirage_fs.S][fs]` and `[Mirage_fs_lwt.S]` signatures
 the MirageOS filesystem devices should implement.
 
 mirage-fs is distributed under the ISC license.

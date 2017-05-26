@@ -1,7 +1,12 @@
+v1.1.0 2016-05-26
+-----------------
+
+* Port build to [Jbuilder](https://github.com/janestreet/jbuilder).
+
 v1.0.0 2016-12-27
 -----------------
 
-* Import the V1.FS and V1_LWT.FS for mirage-types, part of MirageOS 3.0.
+* Import the `V1.FS` and `V1_LWT.FS` for mirage-types, part of MirageOS 3.0.
 
 v0.7.0 2013-07-21
 -----------------
