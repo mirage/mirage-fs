@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mirage/mirage-fs.svg?branch=master)](https://travis-ci.org/mirage/mirage-fs)
 
-mirage-fs provides the [Mirage_fs.S][fs] and [Mirage_fs_lwt.S][fslwt] signatures
+mirage-fs provides the `[Mirage_fs.S][fs]` and `[Mirage_fs_lwt.S]` signatures
 the MirageOS filesystem devices should implement.
 
 [fs]: http://mirage.github.io/mirage-fs/Mirage_fs.html

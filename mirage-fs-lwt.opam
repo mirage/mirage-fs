@@ -8,16 +8,13 @@ dev-repo:     "https://github.com/mirage/mirage-fs.git"
 bug-reports:  "https://github.com/mirage/mirage-fs/issues"
 tags:         ["org:mirage"]
 
-build: ["ocaml" "pkg/pkg.ml" "build" "-n" name "--pinned" "%{pinned}%" ]
-
 depends: [
-  "ocamlfind" {build}
-  "ocamlbuild" {build}
-  "topkg" {build}
+  "jbuilder" {build & >="1.0+beta7"}
   "mirage-fs" {>= "1.0.0"}
   "mirage-kv-lwt"
   "lwt"
   "cstruct" {>= "1.9.0"}
+  "cstruct-lwt"
 ]
 
 available: [ ocaml-version >= "4.01.0"]
