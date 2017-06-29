@@ -2,7 +2,7 @@ opam-version: "1.2"
 maintainer:   "Thomas Gazagnaire <thomas@gazagnaire.org>"
 authors:      ["Thomas Gazagnaire <thomas@gazagnaire.org>"]
 homepage:     "https://github.com/mirage/mirage-fs"
-doc:          "https://docs.mirage.io/mirage-fs/"
+doc:          "https://mirage.github.io/mirage-fs/"
 license:      "ISC"
 dev-repo:     "https://github.com/mirage/mirage-fs.git"
 bug-reports:  "https://github.com/mirage/mirage-fs/issues"
