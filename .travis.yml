@@ -4,8 +4,8 @@ script: bash -ex .travis-opam.sh
 dist: trusty
 env:
   global:
-  - PINS="mirage-fs.1.0.0:. mirage-fs-lwt.1.0.0:."
+  - PINS="mirage-fs.dev:. mirage-fs-lwt.dev:."
   matrix:
-  - OCAML_VERSION=4.02 PACKAGE="mirage-fs-lwt"
   - OCAML_VERSION=4.03 PACKAGE="mirage-fs-lwt"
   - OCAML_VERSION=4.04 PACKAGE="mirage-fs-lwt"
+  - OCAML_VERSION=4.05 PACKAGE="mirage-fs-lwt"

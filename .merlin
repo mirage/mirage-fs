@@ -1,3 +1,0 @@
-PKG bytes fmt mirage-device lwt cstruct mirage-kv-lwt
-S src
-B _build/**
