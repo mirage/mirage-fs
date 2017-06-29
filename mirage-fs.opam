@@ -14,9 +14,9 @@ build: [
 ]
 
 depends: [
-  "jbuilder" {build & >="1.0+beta7"}
+  "jbuilder" {build & >="1.0+beta10"}
   "fmt"
   "mirage-device" {>= "1.0.0"}
 ]
 
-available: [ ocaml-version >= "4.01.0"]
+available: [ ocaml-version >= "4.03.0"]

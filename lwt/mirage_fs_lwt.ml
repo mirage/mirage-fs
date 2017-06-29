@@ -15,7 +15,6 @@
  *)
 
 open Lwt.Infix
-open Result
 
 module type S = Mirage_fs.S
   with type 'a io = 'a Lwt.t
