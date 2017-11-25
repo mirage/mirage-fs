@@ -23,7 +23,7 @@ The documentation and API reference is generated from the source
 interfaces. It can be consulted [online][doc] or via `odig doc
 mirage-fs`.
 
-[doc]: https://mirage.github.io/mirage-fs/
+[doc]: https://mirage.github.io/mirage-fs/mirage-fs
 
 ## License
 
