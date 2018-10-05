@@ -9,12 +9,12 @@ bug-reports:  "https://github.com/mirage/mirage-fs/issues"
 tags:         ["org:mirage"]
 
 build: [
-  ["jbuilder" "subst"] {pinned}
-  ["jbuilder" "build" "-p" name "-j" jobs]
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
 ]
 
 depends: [
-  "jbuilder" {build & >="1.0+beta10"}
+  "dune"
   "mirage-fs" {>= "1.0.0"}
   "mirage-kv-lwt"
   "lwt"
