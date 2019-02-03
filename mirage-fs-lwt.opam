@@ -23,4 +23,12 @@ depends: [
   "cstruct-lwt"
 ]
 
-synopsis: "MirageOS signatures for filesystem devices"
+synopsis: "MirageOS signatures for filesystem devices using Lwt"
+description: """
+mirage-fs-lwt provides the `[Mirage_fs.S][fs]` and `[Mirage_fs_lwt.S]` signatures
+the MirageOS filesystem devices should implement.  These are specialised to
+the Lwt concurrency library in this package.
+
+[fs]: http://mirage.github.io/mirage-fs/Mirage_fs.html
+[fslwt]: http://mirage.github.io/mirage-fs/Mirage_fs_lwt.html
+"""
