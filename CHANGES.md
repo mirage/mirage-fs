@@ -1,3 +1,10 @@
+### v1.2.0 (2019-02-02)
+
+* Port to dune (@dinosaure)
+* Test more OCaml versions (@hannesm)
+* Fix doc urls (@dinosaure)
+* Upgrade opam metadata to 2.0 (@hannesm)
+
 ### v1.1.1 (2016-06-29)
 
 * Remove `open Result` statements
