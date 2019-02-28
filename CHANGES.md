@@ -1,4 +1,4 @@
-### v2.0.0 (2019-02-27)
+### v2.0.0 (2019-02-28)
 
 * Adjust to mirage-kv-lwt 2.0.0 interface (@hannesm)
 
