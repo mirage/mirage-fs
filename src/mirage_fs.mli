@@ -19,7 +19,7 @@
 
     {e %%VERSION%% } *)
 
-(** {1 Mirage_fs} *)
+(** {2 Mirage_fs} *)
 
 (** The type for FS errors. *)
 type error = [
@@ -50,7 +50,7 @@ type stat = {
 }
 (** The type for Per-file/directory statistics. *)
 
-(** {1 Filesystem} *)
+(** {2 Filesystem} *)
 module type S = sig
 
   type error = private [>
