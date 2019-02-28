@@ -6,6 +6,7 @@ env:
   global:
   - PINS="mirage-fs:. mirage-fs-lwt:."
   matrix:
-  - OCAML_VERSION=4.04 PACKAGE="mirage-fs-lwt"
+  - OCAML_VERSION=4.04 PACKAGE="mirage-fs"
   - OCAML_VERSION=4.05 PACKAGE="mirage-fs-lwt"
   - OCAML_VERSION=4.06 PACKAGE="mirage-fs-lwt"
+  - OCAML_VERSION=4.07 PACKAGE="mirage-fs-lwt"

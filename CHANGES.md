@@ -1,3 +1,7 @@
+### v2.0.0 (2019-02-27)
+
+* Adjust to mirage-kv-lwt 2.0.0 interface (@hannesm)
+
 ### v1.2.0 (2019-02-02)
 
 * Port to dune (@dinosaure)
