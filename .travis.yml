@@ -4,9 +4,9 @@ script: bash -ex .travis-opam.sh
 dist: trusty
 env:
   global:
-  - PINS="mirage-fs:. mirage-fs-lwt:."
+  - PINS="mirage-fs:. mirage-device.2.0.0:git+https://github.com/hannesm/mirage-device.git#easy mirage-kv.3.0.0:git+https://github.com/hannesm/mirage-kv.git#easy"
   matrix:
-  - OCAML_VERSION=4.04 PACKAGE="mirage-fs"
-  - OCAML_VERSION=4.05 PACKAGE="mirage-fs-lwt"
-  - OCAML_VERSION=4.06 PACKAGE="mirage-fs-lwt"
-  - OCAML_VERSION=4.07 PACKAGE="mirage-fs-lwt"
+  - OCAML_VERSION=4.06 PACKAGE="mirage-fs"
+  - OCAML_VERSION=4.07 PACKAGE="mirage-fs"
+  - OCAML_VERSION=4.08 PACKAGE="mirage-fs"
+  - OCAML_VERSION=4.09 PACKAGE="mirage-fs"

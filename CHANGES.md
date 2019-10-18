@@ -1,3 +1,8 @@
+### v3.0.0
+
+* Retire mirage-fs-lwt package, specialies io = LWt.t and
+  page_aligned_buffer = Cstruct.t in mirage-fs
+
 ### v2.0.0 (2019-02-28)
 
 * Adjust to mirage-kv-lwt 2.0.0 interface (@hannesm)

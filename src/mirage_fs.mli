@@ -15,6 +15,8 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *)
 
+[@@@ocaml.deprecated "This module will be retired with MirageOS 4.0, use Mirage_kv instead!"]
+
 (** MirageOS signatures for filesystem devices
 
     {e %%VERSION%% } *)
@@ -78,43 +80,40 @@ module type S = sig
 
   include Mirage_device.S
 
-  type page_aligned_buffer
-  (** The type for memory buffers. *)
-
   val read: t -> string -> int -> int ->
-    (page_aligned_buffer list, error) result io
+    (Cstruct.t list, error) result Lwt.t
   (** [read t key offset length] reads up to [length] bytes from the
       value associated with [key]. If less data is returned than
       requested, this indicates the end of the value. *)
 
-  val size: t -> string -> (int64, error) result io
+  val size: t -> string -> (int64, error) result Lwt.t
   (** Get the value size. *)
 
-  val create: t -> string -> (unit, write_error) result io
+  val create: t -> string -> (unit, write_error) result Lwt.t
   (** [create t path] creates an empty file at [path]. If [path]
       contains directories that do not yet exist, [create] will
       attempt to create them. *)
 
-  val mkdir: t -> string -> (unit, write_error) result io
+  val mkdir: t -> string -> (unit, write_error) result Lwt.t
   (** [mkdir t path] creates an empty directory at [path].  If [path]
       contains intermediate directories that do not yet exist, [mkdir]
       will create them.  If a directory already exists at [path],
       [mkdir] returns [`Ok ()] and takes no action. *)
 
-  val destroy: t -> string -> (unit, write_error) result io
+  val destroy: t -> string -> (unit, write_error) result Lwt.t
   (** [destroy t path] removes a [path] (which may be a file or an
       empty directory) on filesystem [t]. *)
 
-  val stat: t -> string -> (stat, error) result io
+  val stat: t -> string -> (stat, error) result Lwt.t
   (** [stat t path] returns information about file or directory at
       [path]. *)
 
-  val listdir: t -> string -> (string list, error) result io
+  val listdir: t -> string -> (string list, error) result Lwt.t
   (** [listdir t path] returns the names of files and subdirectories
       within the directory [path]. *)
 
-  val write: t -> string -> int -> page_aligned_buffer ->
-    (unit, write_error) result io
+  val write: t -> string -> int -> Cstruct.t ->
+    (unit, write_error) result Lwt.t
   (** [write t path offset data] writes [data] at [offset] in file
       [path] on filesystem [t].
 
@@ -122,4 +121,10 @@ module type S = sig
       attempt to create them.  If [path] already exists, [write] will
       overwrite existing information starting at [off].*)
 
+end
+
+(** Consider a filesystem device as a key/value read-only store. *)
+module To_KV_RO (FS: S): sig
+  include Mirage_kv.RO with type t = FS.t
+  val connect : FS.t -> t Lwt.t
 end
