@@ -26,11 +26,10 @@ conflicts: [ "mirage-fs-lwt" ]
 
 synopsis: "MirageOS signatures for filesystem devices"
 description: """
-mirage-fs provides the `[Mirage_fs.S][fs]` and `[Mirage_fs_lwt.S]` signatures
+mirage-fs provides the `[Mirage_fs.S][fs]` signatures
 the MirageOS filesystem devices should implement.
 
 [fs]: http://mirage.github.io/mirage-fs/Mirage_fs.html
-[fslwt]: http://mirage.github.io/mirage-fs/Mirage_fs_lwt.html
 """
 post-messages: [
   "This package will be retired in MirageOS 4.0. Please use mirage-kv instead."
