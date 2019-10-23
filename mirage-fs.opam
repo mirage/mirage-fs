@@ -22,8 +22,6 @@ depends: [
   "cstruct" {>= "4.0.0"}
   "mirage-kv" {>= "3.0.0"}
 ]
-conflicts: [ "mirage-fs-lwt" ]
-
 synopsis: "MirageOS signatures for filesystem devices"
 description: """
 mirage-fs provides the `[Mirage_fs.S][fs]` signatures

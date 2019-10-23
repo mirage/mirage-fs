@@ -1,7 +1,9 @@
-### v3.0.0
+### v3.0.0 (2019-10-23)
 
-* Retire mirage-fs-lwt package, specialies io = LWt.t and
-  page_aligned_buffer = Cstruct.t in mirage-fs
+* Retire mirage-fs-lwt package (#25 @hannesm)
+* Specialies io = LWt.t and page_aligned_buffer = Cstruct.t in mirage-fs (#25 @hannesm)
+* Mark as deprecated, will be removed for MirageOS 4.0 (#25 @hannesm)
+* Raise lower bound to OCaml 4.06.0 (#25 @hannesm)
 
 ### v2.0.0 (2019-02-28)
 
