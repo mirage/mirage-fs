@@ -1,3 +1,7 @@
+## v3.0.1 (2019-11-04)
+
+* provide deprecated Mirage_fs_lwt for smooth transition (#27 @hannesm)
+
 ### v3.0.0 (2019-10-23)
 
 * Retire mirage-fs-lwt package (#25 @hannesm)
