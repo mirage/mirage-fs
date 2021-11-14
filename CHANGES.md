@@ -1,7 +1,7 @@
-## v4.0.0
+## v4.0.0 (2021-11-15)
 
-* Remove Mirage_fs_lwt module
-* remove mirage-device dependency
+* Remove Mirage_fs_lwt module (#28 @hannesm)
+* remove mirage-device dependency (#28 @hannesm)
 
 ## v3.0.1 (2019-11-04)
 
