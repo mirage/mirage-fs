@@ -56,7 +56,8 @@ module type S = sig
   val pp_error: error Fmt.t
   type write_error = private [> fs_write_error]
   val pp_write_error: write_error Fmt.t
-  include Mirage_device.S
+  type t
+  val disconnect : t -> unit Lwt.t
   val read: t -> string -> int -> int ->
     (Cstruct.t list, error) result Lwt.t
   val size: t -> string -> (int64, error) result Lwt.t
