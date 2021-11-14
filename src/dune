@@ -1,5 +1,4 @@
 (library
  (name        mirage_fs)
  (public_name mirage-fs)
- (libraries   fmt mirage-device lwt cstruct mirage-kv)
- (wrapped false))
+ (libraries   fmt lwt cstruct mirage-kv))

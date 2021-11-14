@@ -1,3 +1,8 @@
+## v4.0.0
+
+* Remove Mirage_fs_lwt module
+* remove mirage-device dependency
+
 ## v3.0.1 (2019-11-04)
 
 * provide deprecated Mirage_fs_lwt for smooth transition (#27 @hannesm)

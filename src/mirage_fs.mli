@@ -78,7 +78,12 @@ module type S = sig
   val pp_write_error: write_error Fmt.t
   (** [pp_write_error] is the pretty-printer for write errors. *)
 
-  include Mirage_device.S
+  type t
+  (** The type representing the internal state of the file system. *)
+
+  val disconnect: t -> unit Lwt.t
+  (** Disconnect from the file system. While this might take some time to
+      complete, it can never result in an error. *)
 
   val read: t -> string -> int -> int ->
     (Cstruct.t list, error) result Lwt.t
