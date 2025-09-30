@@ -7,6 +7,8 @@ license:      "ISC"
 dev-repo:     "git+https://github.com/mirage/mirage-fs.git"
 bug-reports:  "https://github.com/mirage/mirage-fs/issues"
 tags:         ["org:mirage"]
+flags: deprecated
+x-maintenance-intent: ["(none)"]
 
 build: [
   ["dune" "subst"] {dev}
@@ -31,3 +33,4 @@ the MirageOS filesystem devices should implement.
 post-messages: [
   "This package will be retired in MirageOS 4.0. Please use mirage-kv instead."
 ]
+

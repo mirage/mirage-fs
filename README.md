@@ -1,6 +1,10 @@
-## mirage-fs — MirageOS signatures for filesystem devices
+# mirage-fs — MirageOS signatures for filesystem devices (DEPRECATED)
 
-[![Build Status](https://travis-ci.org/mirage/mirage-fs.svg?branch=master)](https://travis-ci.org/mirage/mirage-fs)
+`mirage-fs` is deprecated as of `mirage` release 4.3.0. For a read-write storage interface, see [mirage-kv](https://github.com/mirage/mirage-kv), which provides `Mirage_kv.RW`.
+
+The historical README is included below.
+
+## Summary
 
 mirage-fs provides the `[Mirage_fs.S][fs]` signature
 the MirageOS filesystem devices should implement.
